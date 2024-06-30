@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gestión de Productos</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="scrip.js"></script>    
+        <script src=" https://api.yumserver.com/16989/products"></script>
+    </head>
+    <body>
+
+        <header>
+        
+           <img src="img/logo.jpg" class="logo" alt="logo " />  
+            <h1>    Gestión de los Productos de medias</h1> 
+         <br>
+            <button><a href="princi.html">pagina principal</a></button>
+
+            <button onclick="Mostrar('lista')">lista de los productos</button>
+    
+            <button onclick="Mostrar('nuevo-producto')">nuevo Producto</button> 
+      
+        </header>
+       
+
+        <div id="lista" class="cuerpo1">
+            <h1>tabla de Productos</h1>
+            <button onclick="obtenerproducto()">obtener productos</button>
+            <br>
+            <table>
+                <tr>
+                <th>ID</th>
+                <th>Titulo</th>
+                <th>Precio Ar$</th>
+                <th>Precio U$D</th>
+                <th>Fecha</th>
+            
+                </tr>
+                <tbody id="resultados"> </tbody>
+            </table>
+            
+        </div>
+
+        <div id="nuevo-producto" style="display: none;">
+           
+                <h2>Agregar Producto</h2>
+                <br><br>
+                <form action="javascript:none">
+                    <label for="titulo">Título del producto:</label>
+                    <input type="text" id="titulo" name="titulo" placeholder="ingrese un Titulo" required><br><br>
+                    <label for="precioPeso">Precio en pesos:</label>
+                    <input type="number" id="precioPeso" name="precioPeso" placeholder="ingrese precio peso" required><br><br>
+                    <label for="precioDolar">Precio en dólares:</label>
+                    <input type="number" id="precioDolar" name="precioDolar" placeholder="ingrese precio dolar" required><br><br>
+                    <label for="fecha">Fecha del producto:</label>
+                    <input type="date" id="fecha" name="fecha" placeholder="ingrese fecha" required><br><br>
+                    <button onclick="agregarproducto()">agregar producto</button>
+                </form>
+        
+        </div>
+
+
+        <div id="modificar-producto" style="display: none;">
+                <h2>modificar producto</h2>
+            <form action="javascript:none">
+             
+                    <input type="hidden" id="idcod" name="idcod"><br><br>
+                    <label for="tiitle">Título del producto:</label>
+                    <input type="text" id="tiitle" name="tiitle" required><br><br>
+                    <label for="precioPeso1">Precio en pesos:</label>
+                    <input type="number" id="precioPeso1" name="precioPeso1" required><br><br>
+                    <label for="precioDolar1">Precio en dólares:</label>
+                    <input type="number" id="precioDolar1" name="precioDolar1" required><br><br>
+                    <label for="fecha1">Fecha del producto:</label>
+                    <input type="date" id="fecha1" name="fecha1" required><br><br>
+                    <button onclick="productomodificado()">Modificar producto</button>
+                    <button onclick="Mostrar('lista')">cancelar</button>
+            </form>
+        </div>
+
+        <footer>   
+            
+            <p>
+            <p>telefono:3564-637025</p>
+            <p>email: ludmilamanassero45@gmail.com</p> 
+            <p>ubicacion:     
+            <a href="https://maps.app.goo.gl/FpcE4qsC5MhA2A1D8">san francisco</a></p>
+            <p>tienda mayorista: 
+            <a href="https://www.modapoint.com.ar/207-medias">mayorista de las medias elemento</a></p>
+            </p>
+            
+            </p> <img src="img/logo.jpg" class="logo1" alt="logo " />
+        
+        </footer>
+
+    </body>
+</html>
